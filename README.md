@@ -6,6 +6,8 @@ A simple CRUD web APIs application using hapi framework and CouchDB.
 
 Node.js or io.js.
 
+Nodemon globally installed: ``` npm install -g nodemon ```
+
 CouchDB instance.
 
 Employee database has to be manually created, for example: 

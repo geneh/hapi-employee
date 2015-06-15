@@ -8,7 +8,7 @@
     "test": "./node_modules/lab/bin/lab -c -L",
     "test-cover": "./node_modules/lab/bin/lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
   },
-  "author": "Your name",
+  "author": "Gene Hazan",
   "license": "ISC",
   "dependencies": {
     "boom": "^2.7.2",
