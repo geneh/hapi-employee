@@ -8,7 +8,9 @@ Node.js or io.js.
 
 CouchDB instance.
 
-Employee database has to be manually created, for example: ```curl -X PUT http://192.168.59.103:5984/employee```
+Employee database has to be manually created, for example: 
+
+```curl -X PUT http://192.168.59.103:5984/employee```
 
 ## Build
 
