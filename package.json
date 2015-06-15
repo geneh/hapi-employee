@@ -1,0 +1,26 @@
+{
+  "name": "hapi-employee",
+  "version": "1.0.0",
+  "description": "A simple CRUD web APIs application using hapi framework and CouchDB.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon .",
+    "test": "./node_modules/lab/bin/lab -c -L",
+    "test-cover": "./node_modules/lab/bin/lab -c -r html -o ./test/artifacts/coverage.html && open ./test/artifacts/coverage.html"
+  },
+  "author": "Your name",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^2.7.2",
+    "hapi": "^8.6.1",
+    "hapi-swagger": "^0.7.3",
+    "joi": "^6.4.3",
+    "lout": "^6.2.2",
+    "request": "^2.57.0"
+  },
+  "devDependencies": {
+    "code": "^1.4.0",
+    "lab": "^5.10.0",
+    "sinon": "^1.15.3"
+  }
+}
