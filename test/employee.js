@@ -46,7 +46,6 @@ describe('Employee APIs:', function () {
             var employees = response.result;
             expect(employees).to.be.instanceof(Array);
             expect(employees[0].id).to.equal(1);
-            expect(employees[0].id).to.equal(1);
             expect(employees[0].name).to.equal('Joe');
             done();
         });
