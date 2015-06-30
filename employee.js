@@ -35,8 +35,8 @@ var employee = {
                         var employees = [];
                         if (docBody.rows) {
                             for (var i = 0, il = docBody.rows.length; i < il; ++i) {
-                                var employee = docBody.rows[i];
-                                employees.push({ id: employee.doc.id, name: employee.doc.name });
+                                var empl = docBody.rows[i];
+                                employees.push({ id: empl.doc.id, name: empl.doc.name });
                             }
                         }
                         reply(employees);
@@ -100,9 +100,9 @@ var employee = {
                 Request.get(Config.dbUrl + encodeURIComponent(request.params.id), function (err, response, body) {
 
                     if (err) {
-                        var error = Boom.wrap(err);
-                        console.error(error);
-                        reply(error);
+                        var boomError = Boom.wrap(err);
+                        console.error(boomError);
+                        reply(boomError);
                     } else {
                         var docBody = JSON.parse(body);
                         if (docBody.id) { //Document exists, provide latest revision to update.
@@ -111,7 +111,7 @@ var employee = {
                         Request.put({
                             url: Config.dbUrl + encodeURIComponent(request.params.id),
                             json: request.payload
-                        }, function (error, response, body) {
+                        }, function (error, putResponse, putBody) {
 
                             delete request.payload._rev;
                             reply(request.payload);
@@ -144,7 +144,7 @@ var employee = {
                         var docBody = JSON.parse(body);
                         if (docBody.id) { //Document exists
                             var url = Config.dbUrl + encodeURIComponent(request.params.id) + '?rev=' + docBody._rev;
-                            Request.del(url, function (error, response, body) {
+                            Request.del(url, function (delError, delResponse, delBody) {
                             });
                         }
                         reply({});
