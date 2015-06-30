@@ -11,7 +11,7 @@
 FROM    debian:latest
 
 # Declare who maintains the image
-MAINTAINER Gene Hazan <ghazan@costco.com>
+MAINTAINER Gene Hazan <>
 
 # Update Guest OS packages and install any needed packages
 RUN apt-get update && apt-get install -y curl
